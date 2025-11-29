@@ -3,7 +3,7 @@
 // Force git update
 
 import { useState } from 'react';
-import { Send, Loader2, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Loader2, Mail, MapPin, Phone, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
@@ -81,11 +81,20 @@ export default function Contact() {
                     <div className="glass p-6 rounded-2xl space-y-6 border border-white/10 bg-white/5 backdrop-blur-lg">
                         <div className="flex items-center space-x-4 text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-1">
+                                <User size={24} />
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-white">Name</h3>
+                                <p>Sai Sumanth</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center space-x-4 text-gray-300">
+                            <div className="p-3 bg-white/5 rounded-full text-accent-1">
                                 <Mail size={24} />
                             </div>
                             <div>
                                 <h3 className="font-semibold text-white">Email</h3>
-                                <p>hello@example.com</p>
+                                <p>saisumanthstylest3856@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex items-center space-x-4 text-gray-300">
@@ -94,7 +103,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-white">Location</h3>
-                                <p>San Francisco, CA</p>
+                                <p>Vijayawada</p>
                             </div>
                         </div>
                         <div className="flex items-center space-x-4 text-gray-300">
@@ -103,7 +112,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-white">Phone</h3>
-                                <p>+1 (555) 123-4567</p>
+                                <p>9502223672</p>
                             </div>
                         </div>
                     </div>
