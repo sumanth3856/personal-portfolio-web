@@ -71,7 +71,7 @@ const Letter = ({ content }: LetterProps) => {
                             <div className="text-white text-xl font-bold z-10 tracking-widest uppercase">Read About Me</div>
                             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
                         </div>
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-secondary px-4 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#000000] px-4 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                             Click to open
                         </div>
                     </motion.div>

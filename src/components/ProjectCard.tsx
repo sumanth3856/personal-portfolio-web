@@ -18,7 +18,7 @@ const ProjectCard = ({ title, description, tags, link, github }: ProjectProps) =
             className="glass glass-hover rounded-2xl p-6 transition-all duration-300 group"
         >
             <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-black dark:text-white group-hover:text-accent-2 transition-colors">{title}</h3>
+                <h3 className="text-2xl font-bold text-[#000000] dark:text-white group-hover:text-[#3f224a] transition-colors">{title}</h3>
                 <div className="flex gap-3">
                     <a href={github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/20 text-white transition-colors">
                         <Github size={18} />
@@ -29,7 +29,7 @@ const ProjectCard = ({ title, description, tags, link, github }: ProjectProps) =
                 </div>
             </div>
 
-            <p className="text-black dark:text-gray-300 mb-6 leading-relaxed">{description}</p>
+            <p className="text-[#000000] dark:text-gray-300 mb-6 leading-relaxed">{description}</p>
 
             <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
