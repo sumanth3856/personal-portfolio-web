@@ -1,5 +1,7 @@
 "use client";
 
+// Force git update
+
 import { useState } from 'react';
 import { Send, Loader2, Mail, MapPin, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';

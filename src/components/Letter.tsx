@@ -1,5 +1,7 @@
 "use client";
 
+// Force git update
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart } from 'lucide-react';
