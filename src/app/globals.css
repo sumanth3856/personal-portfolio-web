@@ -43,19 +43,19 @@
 }
 
 :root {
-  /* Light Mode Defaults - Vibrant Monochromatic Blue */
-  --background: #F8FAFC;
-  /* Slate 50 */
-  --foreground: #0F172A;
-  /* Slate 900 */
-  --color-primary: #3B82F6;
-  /* Blue 500 */
+  /* Light Mode Defaults - High Contrast */
+  --background: #ffffff;
+  /* Pure White */
+  --foreground: #210F37;
+  /* Deep Navy/Purple for paragraphs */
+  --color-primary: #000000;
+  /* Black for headings context */
   --color-secondary: #EFF6FF;
-  /* Blue 50 */
+  /* Keep light blue for secondary backgrounds if needed, or switch to white/gray */
   --color-accent-1: #000000;
-  /* Dark Black */
-  --color-accent-2: #0EA5E9;
-  /* Sky 500 */
+  /* Black for buttons */
+  --color-accent-2: #7A1CAC;
+  /* Vibrant Purple for hover/accent */
 
   /* Glassmorphism Variables */
   --glass-bg: rgba(255, 255, 255, 0.7);
