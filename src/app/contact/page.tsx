@@ -68,7 +68,7 @@ export default function Contact() {
                 className="text-center mb-12"
             >
                 <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
-                <p className="text-gray-400">Have a question or want to work together?</p>
+                <p className="text-black dark:text-gray-400">Have a question or want to work together?</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -80,7 +80,7 @@ export default function Contact() {
                     className="space-y-8"
                 >
                     <div className="glass p-6 rounded-2xl space-y-6 border border-white/10 bg-white/5 backdrop-blur-lg">
-                        <div className="flex items-center space-x-4 text-gray-300">
+                        <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-1">
                                 <User size={24} />
                             </div>
@@ -89,7 +89,7 @@ export default function Contact() {
                                 <p>Sai Sumanth</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-4 text-gray-300">
+                        <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-1">
                                 <Mail size={24} />
                             </div>
@@ -98,7 +98,7 @@ export default function Contact() {
                                 <p>saisumanth3856@gmail.com</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-4 text-gray-300">
+                        <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-2">
                                 <MapPin size={24} />
                             </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                                 <p>Vijayawada</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-4 text-gray-300">
+                        <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-purple-400">
                                 <Phone size={24} />
                             </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                         <button
                             type="submit"
                             disabled={status === 'loading' || status === 'success'}
-                            className="w-full py-4 rounded-lg bg-gradient-to-r from-accent-1 to-accent-2 text-white font-bold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-4 rounded-lg bg-black text-white font-bold hover:bg-accent-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                         >
                             {status === 'loading' ? (
                                 <>
