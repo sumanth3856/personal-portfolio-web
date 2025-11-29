@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "title": "E-Commerce Platform",
+        "description": "A full-featured e-commerce solution built with Next.js and Stripe.",
+        "tags": [
+            "Next.js",
+            "Stripe",
+            "Tailwind CSS"
+        ],
+        "link": "#",
+        "github": "#"
+    },
+    {
+        "id": "2",
+        "title": "Task Management App",
+        "description": "A productivity tool for managing daily tasks and workflows.",
+        "tags": [
+            "React",
+            "Redux",
+            "Firebase"
+        ],
+        "link": "#",
+        "github": "#"
+    },
+    {
+        "id": "3",
+        "title": "Portfolio Website",
+        "description": "My personal portfolio website showcasing my skills and projects.",
+        "tags": [
+            "Next.js",
+            "Framer Motion",
+            "Tailwind"
+        ],
+        "link": "#",
+        "github": "#"
+    }
+]
