@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         try {
             const data = await resend.emails.send({
                 from: 'Portfolio Contact <onboarding@resend.dev>', // Default Resend testing domain
-                to: 'saisumanthstylest3856@gmail.com', // User's email from store.json
+                to: 'saisumanth3856@gmail.com', // User's email from store.json
                 subject: `New Contact Form Submission from ${messageData.name}`,
                 html: `
           <h1>New Message</h1>

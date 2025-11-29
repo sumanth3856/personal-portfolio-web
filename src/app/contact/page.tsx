@@ -94,7 +94,7 @@ export default function Contact() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-white">Email</h3>
-                                <p>saisumanthstylest3856@gmail.com</p>
+                                <p>saisumanth3856@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex items-center space-x-4 text-gray-300">
