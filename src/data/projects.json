@@ -25,14 +25,17 @@
     },
     {
         "id": "3",
-        "title": "Portfolio Website",
-        "description": "My personal portfolio website showcasing my skills and projects.",
+        "title": "Personal Portfolio",
+        "description": "A modern, responsive portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Features include a custom MDX blog, Vercel KV persistence, and a premium glassmorphism design.",
         "tags": [
             "Next.js",
+            "React",
+            "Tailwind CSS",
             "Framer Motion",
-            "Tailwind"
+            "Vercel KV"
         ],
-        "link": "#",
-        "github": "#"
+        "link": "https://saisumanth-portfolio.vercel.app",
+        "github": "https://github.com/sumanth3856/personal-portfolio-web",
+        "image": "/projects/portfolio.jpg"
     }
 ]

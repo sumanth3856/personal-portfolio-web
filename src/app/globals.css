@@ -52,6 +52,11 @@
   /* Cyan */
   --color-accent-2: #3B82F6;
   /* Blue */
+  /* Glassmorphism Variables */
+  --glass-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-hover-bg: rgba(0, 0, 0, 0.1);
+  --glass-hover-border: rgba(0, 0, 0, 0.2);
 }
 
 .dark {
@@ -62,6 +67,12 @@
   --color-secondary: #2E073F;
   --color-accent-1: #7A1CAC;
   --color-accent-2: #AD49E1;
+
+  /* Glassmorphism Variables (Dark) */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover-bg: rgba(255, 255, 255, 0.1);
+  --glass-hover-border: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -81,15 +92,15 @@ body {
 
 /* Glassmorphism Utility */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
 }
 
 /* Background Blobs */
