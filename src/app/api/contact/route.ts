@@ -60,10 +60,15 @@ export async function POST(request: Request) {
         }
     }
 
-    // 3. Fallback to local store
-    const store = getLocalStore();
-    store.messages.push(messageData);
-    saveLocalStore(store);
+    // 3. Fallback to local store (Only in development or if FS is writable)
+    try {
+        const store = getLocalStore();
+        store.messages.push(messageData);
+        saveLocalStore(store);
+    } catch (error) {
+        console.warn('Could not save to local store (expected in Vercel production):', error);
+        // Do not fail the request if local save fails, as email/KV might have succeeded
+    }
 
     return NextResponse.json({ success: true });
 }

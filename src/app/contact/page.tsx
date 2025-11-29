@@ -78,7 +78,7 @@ export default function Contact() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="space-y-8"
                 >
-                    <div className="glass p-6 rounded-2xl space-y-6">
+                    <div className="glass p-6 rounded-2xl space-y-6 border border-white/10 bg-white/5 backdrop-blur-lg">
                         <div className="flex items-center space-x-4 text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-1">
                                 <Mail size={24} />
