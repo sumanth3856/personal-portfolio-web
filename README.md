@@ -18,7 +18,7 @@ npm run dev
 
 ## Resume
 
-### John Doe
+### Sai Sumanth 
 **Full Stack Developer**
 
 Experienced Full Stack Developer with a passion for building scalable web applications.
