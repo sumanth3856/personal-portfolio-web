@@ -32,6 +32,7 @@ export async function POST(request: Request) {
 
     if (process.env.RESEND_API_KEY) {
         try {
+            console.log("Attempting to send email to:", 'saisumanth3856@gmail.com');
             const data = await resend.emails.send({
                 from: 'Portfolio Contact <onboarding@resend.dev>', // Default Resend testing domain
                 to: 'saisumanth3856@gmail.com', // User's email from store.json
@@ -44,9 +45,14 @@ export async function POST(request: Request) {
           <p>${messageData.message}</p>
         `,
             });
-            console.log("Resend Success:", data);
+
+            if (data.error) {
+                console.error("Resend API returned error:", data.error);
+            } else {
+                console.log("Resend Success - Email ID:", data.data?.id);
+            }
         } catch (error) {
-            console.error('Resend Error:', error);
+            console.error('Resend Exception:', error);
         }
     }
 
