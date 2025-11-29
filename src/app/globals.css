@@ -43,20 +43,27 @@
 }
 
 :root {
-  /* Light Mode Defaults */
-  --background: #ffffff;
+  /* Light Mode Defaults - Vibrant Monochromatic Blue */
+  --background: #F8FAFC;
+  /* Slate 50 */
   --foreground: #0F172A;
-  --color-primary: #0F172A;
-  --color-secondary: #ffffff;
-  --color-accent-1: #06B6D4;
-  /* Cyan */
-  --color-accent-2: #3B82F6;
-  /* Blue */
+  /* Slate 900 */
+  --color-primary: #3B82F6;
+  /* Blue 500 */
+  --color-secondary: #EFF6FF;
+  /* Blue 50 */
+  --color-accent-1: #2563EB;
+  /* Blue 600 */
+  --color-accent-2: #0EA5E9;
+  /* Sky 500 */
+
   /* Glassmorphism Variables */
-  --glass-bg: rgba(0, 0, 0, 0.05);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-hover-bg: rgba(0, 0, 0, 0.1);
-  --glass-hover-border: rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  /* Higher opacity for visibility */
+  --glass-border: rgba(59, 130, 246, 0.2);
+  /* Subtle blue border */
+  --glass-hover-bg: rgba(255, 255, 255, 0.9);
+  --glass-hover-border: rgba(59, 130, 246, 0.4);
 }
 
 .dark {
