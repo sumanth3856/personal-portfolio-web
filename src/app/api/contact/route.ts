@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 import fs from 'fs';
 import path from 'path';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const storePath = path.join(process.cwd(), 'src/data/store.json');
 
 function getLocalStore() {
@@ -19,21 +19,22 @@ function saveLocalStore(data: any) {
     fs.writeFileSync(storePath, JSON.stringify(data, null, 2));
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
-    const data = await request.json();
+    const body = await request.json();
     const messageData = {
-        ...data,
+        ...body,
         date: new Date().toISOString(),
     };
 
     // 1. Send Email via Resend (if API Key is present)
-    // 1. Send Email via Resend (if API Key is present)
     console.log("Checking Resend API Key:", process.env.RESEND_API_KEY ? "Present" : "Missing");
 
-    if (process.env.RESEND_API_KEY) {
+    if (process.env.RESEND_API_KEY && resend) {
         try {
             console.log("Attempting to send email to:", 'saisumanth3856@gmail.com');
-            const data = await resend.emails.send({
+            const emailResponse = await resend.emails.send({
                 from: 'Portfolio Contact <onboarding@resend.dev>', // Default Resend testing domain
                 to: 'saisumanth3856@gmail.com', // User's email from store.json
                 subject: `New Contact Form Submission from ${messageData.name}`,
@@ -46,13 +47,15 @@ export async function POST(request: Request) {
         `,
             });
 
-            if (data.error) {
-                console.error("Resend API returned error:", data.error);
+            if (emailResponse.error) {
+                console.error("Resend API returned error:", emailResponse.error);
+                return NextResponse.json({ success: false, error: emailResponse.error.message || 'Failed to send email' }, { status: 500 });
             } else {
-                console.log("Resend Success - Email ID:", data.data?.id);
+                console.log("Resend Success - Email ID:", emailResponse.data?.id);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Resend Exception:', error);
+            return NextResponse.json({ success: false, error: error.message || 'Resend Exception' }, { status: 500 });
         }
     }
 

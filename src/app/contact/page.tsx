@@ -29,7 +29,8 @@ export default function Contact() {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to send message');
             }
 
             setStatus('success');
@@ -37,11 +38,11 @@ export default function Contact() {
             toast.success('Message sent successfully!', {
                 description: "I'll get back to you as soon as possible.",
             });
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error submitting form:', error);
             setStatus('error');
             toast.error('Failed to send message.', {
-                description: "Please try again later or email me directly.",
+                description: error.message || "Please try again later or email me directly.",
             });
         } finally {
             // Reset status to idle after 3 seconds if not successful to allow retry
