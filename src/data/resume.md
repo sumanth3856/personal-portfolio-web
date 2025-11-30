@@ -19,4 +19,4 @@ Canva and Photoshop
 I'm always open to discussing new projects or just chatting about design trends. Feel free to reach out!
 
 Best,
-Sai
+Sai Sumanth
