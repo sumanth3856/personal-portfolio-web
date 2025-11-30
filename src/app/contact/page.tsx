@@ -3,7 +3,7 @@
 // Force git update
 
 import { useState } from 'react';
-import { Send, Loader2, Mail, MapPin, User } from 'lucide-react';
+import { Send, Loader2, Mail, Instagram, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
@@ -100,11 +100,18 @@ export default function Contact() {
                         </div>
                         <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full text-accent-2">
-                                <MapPin size={24} />
+                                <Instagram size={24} />
                             </div>
                             <div>
-                                <h3 className="font-semibold text-white">Location</h3>
-                                <p>Vijayawada</p>
+                                <h3 className="font-semibold text-white">Instagram</h3>
+                                <a
+                                    href="https://www.instagram.com/sumanthhh._.08?igsh=dGt0MWx5cDlyZHU4"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-accent-1 transition-colors"
+                                >
+                                    sumanthhh._.08
+                                </a>
                             </div>
                         </div>
 
