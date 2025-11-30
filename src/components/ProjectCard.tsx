@@ -46,7 +46,7 @@ const ProjectCard = ({ title, description, image, category, behance, link }: Pro
 
             <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-accent-1 group-hover:text-white transition-colors">{title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-200 group-hover:text-white transition-colors">{title}</h3>
                     {link && (
                         <a href={link} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/20 text-gray-400 hover:text-white transition-colors">
                             <ExternalLink size={18} />

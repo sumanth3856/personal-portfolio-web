@@ -15,7 +15,7 @@ export default function Home() {
         className="z-10 max-w-4xl"
       >
         <div className="relative inline-block group">
-          <div className="absolute inset-0 bg-gradient-to-r from-accent-1 via-purple-500 to-accent-2 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
           <div className="relative px-6 py-2 rounded-full bg-secondary ring-1 ring-white/10 leading-none flex items-center">
             <span className="text-purple-100 font-medium text-sm">Visual Designer & Creative</span>
           </div>

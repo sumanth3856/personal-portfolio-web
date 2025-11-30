@@ -108,7 +108,7 @@ export default function Contact() {
                                     href="https://www.instagram.com/sumanthhh._.08?igsh=dGt0MWx5cDlyZHU4"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[#11b41a] hover:text-accent-1 transition-colors"
+                                    className="text-[#11b41a] hover:text-white transition-colors"
                                 >
                                     sumanthhh._.08
                                 </a>
