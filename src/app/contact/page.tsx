@@ -124,7 +124,7 @@ export default function Contact() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <form onSubmit={handleSubmit} className="space-y-6 glass p-8 rounded-2xl" style={{ backgroundColor: '#0000001f' }}>
+                    <form onSubmit={handleSubmit} className="space-y-6 glass p-8 rounded-2xl" style={{ backgroundColor: '#000000ff' }}>
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Name</label>
                             <input

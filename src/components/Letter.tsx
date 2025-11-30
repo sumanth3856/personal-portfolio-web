@@ -80,13 +80,13 @@ const Letter = ({ content }: LetterProps) => {
                 {!isOpen ? (
                     <motion.div
                         key="envelope"
-                        layoutId="letter-container"
                         onClick={() => setIsOpen(true)}
                         className="cursor-pointer group relative"
-                        initial={{ scale: 0.8, opacity: 0 }}
+                        initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 1.2, opacity: 0 }}
-                        whileHover={{ scale: 1.05 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        whileHover={{ scale: 1.02 }}
                     >
                         <div className="w-80 h-52 bg-gradient-to-br from-accent-1 to-accent-2 rounded-lg shadow-2xl flex items-center justify-center relative overflow-hidden border border-white/20">
                             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
@@ -100,11 +100,11 @@ const Letter = ({ content }: LetterProps) => {
                 ) : (
                     <motion.div
                         key="letter"
-                        layoutId="letter-container"
                         className="w-full max-w-3xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                        initial={{ scale: 0.95, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.95, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                     >
                         <button
                             onClick={() => setIsOpen(false)}
