@@ -1,11 +1,12 @@
 "use client";
 
-// Force git update
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { toast } from 'sonner';
+import { Caveat } from 'next/font/google';
+
+const caveat = Caveat({ subsets: ['latin'], weight: ['400', '700'] });
 
 interface LetterProps {
     content: string;
@@ -23,29 +24,50 @@ const Letter = ({ content }: LetterProps) => {
             .then(res => res.json())
             .then(data => setLikes(data.likes))
             .catch(err => console.error('Failed to fetch likes:', err));
+
+        // Check local storage for liked status
+        const liked = localStorage.getItem('hasLiked');
+        if (liked) setHasLiked(true);
     }, []);
 
     const handleLike = async (e: React.MouseEvent) => {
         e.stopPropagation();
-        if (hasLiked || isLoading) return;
+        if (isLoading) return;
 
         setIsLoading(true);
         // Optimistic update
-        setLikes(prev => prev + 1);
-        setHasLiked(true);
+        const newHasLiked = !hasLiked;
+        setHasLiked(newHasLiked);
+        setLikes(prev => newHasLiked ? prev + 1 : prev - 1);
+
+        if (newHasLiked) {
+            localStorage.setItem('hasLiked', 'true');
+        } else {
+            localStorage.removeItem('hasLiked');
+        }
 
         try {
-            const res = await fetch('/api/likes', { method: 'POST' });
-            if (!res.ok) throw new Error('Failed to like');
+            const res = await fetch('/api/likes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: newHasLiked ? 'like' : 'unlike' })
+            });
+
+            if (!res.ok) throw new Error('Failed to update likes');
 
             const data = await res.json();
             setLikes(data.likes);
-            toast.success('Thanks for the love!');
+            toast.success(newHasLiked ? 'Thanks for the love!' : 'Unliked');
         } catch (error) {
-            console.error('Error liking:', error);
+            console.error('Error updating likes:', error);
             // Revert optimistic update
-            setLikes(prev => prev - 1);
-            setHasLiked(false);
+            setHasLiked(!newHasLiked);
+            setLikes(prev => !newHasLiked ? prev + 1 : prev - 1);
+            if (!newHasLiked) {
+                localStorage.setItem('hasLiked', 'true');
+            } else {
+                localStorage.removeItem('hasLiked');
+            }
             toast.error('Failed to update likes. Please try again.');
         } finally {
             setIsLoading(false);
@@ -92,7 +114,7 @@ const Letter = ({ content }: LetterProps) => {
                         </button>
 
                         <div className="prose prose-invert max-w-none prose-p:text-gray-300 prose-headings:text-white">
-                            <pre className="whitespace-pre-wrap font-sans text-lg leading-relaxed">
+                            <pre className={`whitespace-pre-wrap text-2xl leading-relaxed ${caveat.className} text-gray-200`}>
                                 {content}
                             </pre>
                         </div>
@@ -101,7 +123,7 @@ const Letter = ({ content }: LetterProps) => {
                             <button
                                 onClick={handleLike}
                                 className={`flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 ${hasLiked
-                                    ? 'bg-pink-500/20 text-pink-400 cursor-default'
+                                    ? 'bg-pink-500/20 text-pink-400'
                                     : 'bg-white/5 hover:bg-pink-500/20 text-gray-300 hover:text-pink-400'
                                     }`}
                             >

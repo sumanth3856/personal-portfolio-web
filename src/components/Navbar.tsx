@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, User, Briefcase, Mail, FileText } from 'lucide-react';
+import { Home, User, Briefcase, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -13,9 +12,8 @@ const Navbar = () => {
 
     const links = [
         { href: '/', label: 'Home', icon: Home },
-        { href: '/about', label: 'About', icon: User },
         { href: '/projects', label: 'Projects', icon: Briefcase },
-        { href: '/blog', label: 'Blog', icon: FileText },
+        { href: '/about', label: 'About', icon: User },
         { href: '/contact', label: 'Contact', icon: Mail },
     ];
 

@@ -6,14 +6,14 @@ My journey began with a curiosity for how things look and feel. Over the years, 
 
 I believe that good design is invisible—it just works. My approach combines strategic thinking with a keen eye for detail, ensuring that every pixel serves a purpose.
 
-### What I Do
+What I Do
 - Brand Identity & Strategy
 - UI/UX Design for Web & Mobile
 - Visual Storytelling
 - Creative Development
 
-### Toolkit
-Figma, Adobe Creative Suite (Ps, Ai, Ae), Blender, and code (React/Next.js) to bring designs to life.
+Tools
+Canva and Photoshop
 
 I'm always open to discussing new projects or just chatting about design trends. Feel free to reach out!
 

@@ -15,7 +15,12 @@ function getLocalStore() {
     return JSON.parse(data);
 }
 
-function saveLocalStore(data: any) {
+interface StoreData {
+    likes: number;
+    messages: unknown[];
+}
+
+function saveLocalStore(data: StoreData) {
     fs.writeFileSync(storePath, JSON.stringify(data, null, 2));
 }
 
@@ -53,9 +58,10 @@ export async function POST(request: Request) {
             } else {
                 console.log("Resend Success - Email ID:", emailResponse.data?.id);
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('Resend Exception:', error);
-            return NextResponse.json({ success: false, error: error.message || 'Resend Exception' }, { status: 500 });
+            const errorMessage = error instanceof Error ? error.message : 'Resend Exception';
+            return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
         }
     }
 

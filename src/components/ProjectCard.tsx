@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Globe } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProjectProps {
@@ -15,7 +15,7 @@ interface ProjectProps {
     link?: string;
 }
 
-const ProjectCard = ({ title, description, tags, image, category, behance, dribbble, link }: ProjectProps) => {
+const ProjectCard = ({ title, description, image, category, behance, link }: ProjectProps) => {
     return (
         <motion.div
             whileHover={{ y: -10 }}
@@ -33,11 +33,6 @@ const ProjectCard = ({ title, description, tags, image, category, behance, dribb
                         {behance && (
                             <a href={behance} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-white text-black text-sm font-bold hover:bg-accent-1 hover:text-white transition-colors">
                                 Behance
-                            </a>
-                        )}
-                        {dribbble && (
-                            <a href={dribbble} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-[#ea4c89] text-white text-sm font-bold hover:bg-pink-600 transition-colors">
-                                Dribbble
                             </a>
                         )}
                     </div>
@@ -60,14 +55,6 @@ const ProjectCard = ({ title, description, tags, image, category, behance, dribb
                 </div>
 
                 <p className="text-[#000000] dark:text-gray-300 mb-6 leading-relaxed flex-grow">{description}</p>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                    {tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-accent-1/10 text-accent-1 border border-accent-1/20">
-                            {tag}
-                        </span>
-                    ))}
-                </div>
             </div>
         </motion.div>
     );

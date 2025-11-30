@@ -1,60 +1,33 @@
-import { NextResponse } from 'next/server';
 import { kv } from '@vercel/kv';
-import fs from 'fs';
-import path from 'path';
-
-const storePath = path.join(process.cwd(), 'src/data/store.json');
-
-function getLocalStore() {
-    if (!fs.existsSync(storePath)) {
-        return { likes: 0, messages: [] };
-    }
-    const data = fs.readFileSync(storePath, 'utf8');
-    return JSON.parse(data);
-}
-
-function saveLocalStore(data: any) {
-    fs.writeFileSync(storePath, JSON.stringify(data, null, 2));
-}
+import { NextResponse } from 'next/server';
 
 export async function GET() {
-    // Check if Vercel KV is configured
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-        try {
-            const likes = await kv.get('likes');
-            return NextResponse.json({ likes: likes || 0 });
-        } catch (error) {
-            console.error('Vercel KV Error:', error);
-        }
+    try {
+        const likes = await kv.get('portfolio:likes');
+        return NextResponse.json({ likes: likes || 0 });
+    } catch (error) {
+        console.error('KV Error:', error);
+        return NextResponse.json({ likes: 0 }, { status: 500 });
     }
-
-    // Fallback to local store
-    const store = getLocalStore();
-    return NextResponse.json({ likes: store.likes });
 }
 
-export async function POST() {
-    // Check if Vercel KV is configured
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-        try {
-            const likes = await kv.incr('likes');
-            return NextResponse.json({ likes });
-        } catch (error) {
-            console.error('Vercel KV Error:', error);
-        }
-    }
-
-    // Fallback to local store (Only in development or if FS is writable)
+export async function POST(request: Request) {
     try {
-        const store = getLocalStore();
-        store.likes++;
-        saveLocalStore(store);
-        return NextResponse.json({ likes: store.likes });
+        const body = await request.json();
+        const { action } = body;
+
+        let likes;
+        if (action === 'like') {
+            likes = await kv.incr('portfolio:likes');
+        } else if (action === 'unlike') {
+            likes = await kv.decr('portfolio:likes');
+        } else {
+            return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
+        }
+
+        return NextResponse.json({ likes });
     } catch (error) {
-        console.warn('Could not save to local store (expected in Vercel production):', error);
-        // If we can't save, we should probably still return the incremented value optimistically
-        // or just return the current value if we couldn't read it either.
-        // For now, let's try to return a sensible value.
-        return NextResponse.json({ likes: 1 }); // Fallback
+        console.error('KV Error:', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }

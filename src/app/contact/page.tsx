@@ -3,7 +3,7 @@
 // Force git update
 
 import { useState } from 'react';
-import { Send, Loader2, Mail, MapPin, Phone, User } from 'lucide-react';
+import { Send, Loader2, Mail, MapPin, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
@@ -38,11 +38,11 @@ export default function Contact() {
             toast.success('Message sent successfully!', {
                 description: "I'll get back to you as soon as possible.",
             });
-        } catch (error: any) {
+        } catch (error) {
             console.error('Error submitting form:', error);
             setStatus('error');
             toast.error('Failed to send message.', {
-                description: error.message || "Please try again later or email me directly.",
+                description: error instanceof Error ? error.message : "Please try again later or email me directly.",
             });
         } finally {
             // Reset status to idle after 3 seconds if not successful to allow retry
@@ -107,15 +107,7 @@ export default function Contact() {
                                 <p>Vijayawada</p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-4 text-accent-2 dark:text-gray-300">
-                            <div className="p-3 bg-white/5 rounded-full text-purple-400">
-                                <Phone size={24} />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold text-white">Phone</h3>
-                                <p>9502223672</p>
-                            </div>
-                        </div>
+
                     </div>
                 </motion.div>
 
