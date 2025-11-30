@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, User, Briefcase, Mail, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeToggle } from './ThemeToggle';
+
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -53,14 +53,10 @@ const Navbar = () => {
                                     </Link>
                                 );
                             })}
-                            <div className="pl-4 border-l border-white/10 ml-4">
-                                <ThemeToggle />
-                            </div>
                         </div>
 
                         {/* Mobile Menu Button */}
                         <div className="md:hidden flex items-center gap-4">
-                            <ThemeToggle />
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 className="p-2 text-gray-300 hover:text-white transition-colors"
