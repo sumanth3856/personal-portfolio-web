@@ -68,5 +68,61 @@
         "image": "/projects/sikkolu-seaman.png",
         "behance": "https://behance.net",
         "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "6",
+        "title": "Pro Level Editing",
+        "category": "Tutorial Thumbnail",
+        "description": "Eye-catching thumbnail for a video editing tutorial, highlighting professional software skills.",
+        "tags": [
+            "Video Editing",
+            "Tutorial",
+            "Graphic Design"
+        ],
+        "image": "/projects/pro-level-editing.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "7",
+        "title": "Edit Like A Pro",
+        "category": "Personal Branding",
+        "description": "Personal branding asset showcasing editing mastery with a bold and confident visual style.",
+        "tags": [
+            "Personal Branding",
+            "Social Media",
+            "Creative Direction"
+        ],
+        "image": "/projects/edit-like-a-pro.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "8",
+        "title": "Digital Marketing Guide",
+        "category": "Marketing Design",
+        "description": "Informative and engaging thumbnail for a digital marketing guide, designed to drive clicks and conversions.",
+        "tags": [
+            "Marketing",
+            "Social Media",
+            "Typography"
+        ],
+        "image": "/projects/digital-marketing.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "9",
+        "title": "Before vs After Marriage",
+        "category": "Entertainment Design",
+        "description": "Humorous and relatable thumbnail design for an entertainment video, using contrast and expression.",
+        "tags": [
+            "Entertainment",
+            "YouTube",
+            "Visual Comedy"
+        ],
+        "image": "/projects/before-after-marriage.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
     }
 ]

@@ -21,14 +21,14 @@ const ProjectCard = ({ title, description, tags, image, category, behance, dribb
             whileHover={{ y: -10 }}
             className="glass glass-hover rounded-2xl overflow-hidden transition-all duration-300 group flex flex-col h-full"
         >
-            <div className="relative h-64 w-full overflow-hidden">
+            <div className="relative aspect-video w-full overflow-hidden bg-black/50">
                 <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div className="flex gap-3">
                         {behance && (
                             <a href={behance} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-white text-black text-sm font-bold hover:bg-accent-1 hover:text-white transition-colors">
@@ -51,7 +51,7 @@ const ProjectCard = ({ title, description, tags, image, category, behance, dribb
 
             <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-[#000000] dark:text-white group-hover:text-accent-1 transition-colors">{title}</h3>
+                    <h3 className="text-2xl font-bold text-accent-1 group-hover:text-white transition-colors">{title}</h3>
                     {link && (
                         <a href={link} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/20 text-gray-400 hover:text-white transition-colors">
                             <ExternalLink size={18} />
