@@ -1,41 +1,72 @@
 [
     {
         "id": "1",
-        "title": "E-Commerce Platform",
-        "description": "A full-featured e-commerce solution built with Next.js and Stripe.",
+        "title": "YouTube Growth Strategy",
+        "category": "Thumbnail Design",
+        "description": "High-contrast thumbnail design focused on click-through rate optimization for educational content.",
         "tags": [
-            "Next.js",
-            "Stripe",
-            "Tailwind CSS"
+            "Photoshop",
+            "Typography",
+            "Composition"
         ],
-        "link": "#",
-        "github": "#"
+        "image": "/projects/youtube-growth.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
     },
     {
         "id": "2",
-        "title": "Task Management App",
-        "description": "A productivity tool for managing daily tasks and workflows.",
+        "title": "Cybersecurity Finance",
+        "category": "Thumbnail Design",
+        "description": "Visual storytelling for a finance and tech video, blending hacking motifs with monetary elements.",
         "tags": [
-            "React",
-            "Redux",
-            "Firebase"
+            "Photo Manipulation",
+            "Visual Effects",
+            "Branding"
         ],
-        "link": "#",
-        "github": "#"
+        "image": "/projects/hacking-money.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
     },
     {
         "id": "3",
-        "title": "Personal Portfolio",
-        "description": "A modern, responsive portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Features include a custom MDX blog, Vercel KV persistence, and a premium glassmorphism design.",
+        "title": "Dubai Startup Secrets",
+        "category": "Thumbnail Design",
+        "description": "Engaging thumbnail design for a business documentary style video, featuring high-profile imagery.",
         "tags": [
-            "Next.js",
-            "React",
-            "Tailwind CSS",
-            "Framer Motion",
-            "Vercel KV"
+            "Color Grading",
+            "Layout Design",
+            "Marketing"
         ],
-        "link": "https://saisumanth-portfolio.vercel.app",
-        "github": "https://github.com/sumanth3856/personal-portfolio-web",
-        "image": "/projects/portfolio.jpg"
+        "image": "/projects/dubai-startup.jpg",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "4",
+        "title": "SSC CGL Maths Course",
+        "category": "Education Design",
+        "description": "Professional course thumbnail design for an educational series, prioritizing readability and authority.",
+        "tags": [
+            "Education",
+            "Graphic Design",
+            "Print Ready"
+        ],
+        "image": "/projects/ssc-cgl-maths.png",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
+    },
+    {
+        "id": "5",
+        "title": "Sikkolu Seaman Vlog",
+        "category": "Vlog Branding",
+        "description": "Dynamic and emotional thumbnail design for a personal vlog series, capturing the essence of the story.",
+        "tags": [
+            "Vlog",
+            "Storytelling",
+            "Image Editing"
+        ],
+        "image": "/projects/sikkolu-seaman.png",
+        "behance": "https://behance.net",
+        "dribbble": "https://dribbble.com"
     }
 ]

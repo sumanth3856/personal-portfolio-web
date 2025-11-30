@@ -17,17 +17,17 @@ export default function Home() {
         <div className="relative inline-block group">
           <div className="absolute inset-0 bg-gradient-to-r from-accent-1 via-purple-500 to-accent-2 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
           <div className="relative px-6 py-2 rounded-full bg-secondary ring-1 ring-white/10 leading-none flex items-center">
-            <span className="text-[#009a00] dark:text-purple-100 font-medium text-sm">Available for hire</span>
+            <span className="text-purple-100 font-medium text-sm">Visual Designer & Creative</span>
           </div>
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight mt-8">
-          Building <span className="text-[#a200ff]">Digital</span> <br />
-          Experiences
+          Crafting <span className="text-[#a200ff]">Visual</span> <br />
+          Stories
         </h1>
 
         <p className="text-xl md:text-2xl text-[#000000] dark:text-purple-100/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-          I craft accessible, pixel-perfect, and performant web applications with a focus on user experience.
+          I design immersive digital experiences, brand identities, and user interfaces that leave a lasting impression.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -35,13 +35,13 @@ export default function Home() {
             href="/projects"
             className="group flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-accent-2 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(122,28,172,0.5)]"
           >
-            View Work <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            View Portfolio <ArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/contact"
             className="px-8 py-4 rounded-full glass hover:bg-white/10 transition-all duration-300 font-medium"
           >
-            Contact Me
+            Let's Talk
           </Link>
         </div>
       </motion.div>
