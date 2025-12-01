@@ -35,14 +35,12 @@ export async function POST(request: Request) {
     };
 
     // 1. Send Email via Resend (if API Key is present)
-    console.log("Checking Resend API Key:", process.env.RESEND_API_KEY ? "Present" : "Missing");
-
     if (process.env.RESEND_API_KEY && resend) {
         try {
             console.log("Attempting to send email to:", 'saisumanth3856@gmail.com');
             const emailResponse = await resend.emails.send({
-                from: 'Sai Sumanth Portfolio <onboarding@resend.dev>', // Default Resend testing domain
-                to: 'saisumanth3856@gmail.com', // User's email from store.json
+                from: 'Sai Sumanth Portfolio <onboarding@resend.dev>',
+                to: 'saisumanth3856@gmail.com',
                 subject: `New Message from ${messageData.name}`,
                 html: generateEmailHtml({
                     name: messageData.name,
