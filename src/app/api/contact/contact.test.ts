@@ -70,6 +70,7 @@ describe('Contact API', () => {
         expect(mockSend).toHaveBeenCalledWith(expect.objectContaining({
             to: 'saisumanth3856@gmail.com',
             subject: expect.stringContaining('New Message from Test User'),
+            html: expect.stringContaining('New Portfolio Inquiry'),
         }));
         expect(data).toEqual({ success: true });
     });

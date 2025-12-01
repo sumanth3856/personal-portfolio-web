@@ -3,6 +3,7 @@ import { kv } from '@vercel/kv';
 import { Resend } from 'resend';
 import fs from 'fs';
 import path from 'path';
+import { generateEmailHtml } from './email-template';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const storePath = path.join(process.cwd(), 'src/data/store.json');
@@ -43,13 +44,11 @@ export async function POST(request: Request) {
                 from: 'Sai Sumanth Portfolio <onboarding@resend.dev>', // Default Resend testing domain
                 to: 'saisumanth3856@gmail.com', // User's email from store.json
                 subject: `New Message from ${messageData.name}`,
-                html: `
-          <h1>New Message</h1>
-          <p><strong>Name:</strong> ${messageData.name}</p>
-          <p><strong>Email:</strong> ${messageData.email}</p>
-          <p><strong>Message:</strong></p>
-          <p>${messageData.message}</p>
-        `,
+                html: generateEmailHtml({
+                    name: messageData.name,
+                    email: messageData.email,
+                    message: messageData.message,
+                }),
             });
 
             if (emailResponse.error) {
