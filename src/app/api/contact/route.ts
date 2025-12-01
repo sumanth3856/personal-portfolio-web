@@ -38,11 +38,11 @@ export async function POST(request: Request) {
 
     if (process.env.RESEND_API_KEY && resend) {
         try {
-            console.log("Attempting to send email to:", 'saisumanthstylest3856@gmail.com');
+            console.log("Attempting to send email to:", 'saisumanth3856@gmail.com');
             const emailResponse = await resend.emails.send({
-                from: 'Portfolio Contact <onboarding@resend.dev>', // Default Resend testing domain
-                to: 'saisumanthstylest3856@gmail.com', // User's email from store.json
-                subject: `New Contact Form Submission from ${messageData.name}`,
+                from: 'Sai Sumanth Portfolio <onboarding@resend.dev>', // Default Resend testing domain
+                to: 'saisumanth3856@gmail.com', // User's email from store.json
+                subject: `New Message from ${messageData.name}`,
                 html: `
           <h1>New Message</h1>
           <p><strong>Name:</strong> ${messageData.name}</p>
