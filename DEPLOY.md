@@ -3,7 +3,6 @@
 Your portfolio is ready to be deployed to Vercel!
 
 ## 1. Push to GitHub
-(Already done! I pushed the latest changes to your repository.)
 
 ## 2. Import to Vercel
 1.  Go to [Vercel Dashboard](https://vercel.com/dashboard).
@@ -29,4 +28,3 @@ Click **"Deploy"**. Vercel will build your site and give you a live URL (e.g., `
 Visit your live URL and check:
 -   **Home Page**: Should look correct.
 -   **Contact Form**: Try sending a message (check your email).
--   **Theme Toggle**: Should work.
