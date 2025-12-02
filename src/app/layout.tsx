@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 import GlobalErrorHandler from "@/components/GlobalErrorHandler";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"], display: 'swap' });
+const inter = Inter({ subsets: ["latin"], display: 'swap', preload: false });
 
 export const metadata: Metadata = {
   title: {
