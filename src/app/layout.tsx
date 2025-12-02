@@ -40,6 +40,33 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col relative`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var test = 'test';
+                  window.localStorage.setItem(test, test);
+                  window.localStorage.removeItem(test);
+                  window.sessionStorage.setItem(test, test);
+                  window.sessionStorage.removeItem(test);
+                } catch (e) {
+                  console.warn('Storage access blocked. Using polyfill.');
+                  var mockStorage = {
+                    getItem: function() { return null; },
+                    setItem: function() { },
+                    removeItem: function() { },
+                    clear: function() { },
+                    length: 0,
+                    key: function() { return null; }
+                  };
+                  Object.defineProperty(window, 'localStorage', { value: mockStorage, configurable: true, writable: true });
+                  Object.defineProperty(window, 'sessionStorage', { value: mockStorage, configurable: true, writable: true });
+                }
+              })();
+            `,
+          }}
+        />
         <Providers>
           <GlobalErrorHandler>
             {/* Background Blobs */}
