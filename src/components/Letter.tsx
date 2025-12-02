@@ -102,14 +102,14 @@ const Letter = ({ content }: LetterProps) => {
                         key="letter"
                         role="dialog"
                         aria-modal="true"
-                        aria-labelledby="letter-title"
+                        aria-label="Letter from Sai Sumanth"
                         className="w-full max-w-3xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative"
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
                     >
-                        <h2 id="letter-title" className="sr-only">Letter from Sai Sumanth</h2>
+                        <h2 className="sr-only">Letter from Sai Sumanth</h2>
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
