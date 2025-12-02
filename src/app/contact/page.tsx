@@ -67,7 +67,7 @@ export default function Contact() {
                 transition={{ duration: 0.5 }}
                 className="text-center mb-12"
             >
-                <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+                <h1 id="contact-heading" className="text-4xl font-bold mb-4">Get in Touch</h1>
                 <p className="text-black dark:text-gray-400">Have a question or want to work together?</p>
             </motion.div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <form onSubmit={handleSubmit} className="space-y-6 glass p-8 rounded-2xl" style={{ backgroundColor: '#00000001' }}>
+                    <form onSubmit={handleSubmit} aria-labelledby="contact-heading" className="space-y-6 glass p-8 rounded-2xl" style={{ backgroundColor: '#00000001' }}>
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Name</label>
                             <input

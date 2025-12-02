@@ -100,12 +100,16 @@ const Letter = ({ content }: LetterProps) => {
                 ) : (
                     <motion.div
                         key="letter"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="letter-title"
                         className="w-full max-w-3xl bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl relative"
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
                     >
+                        <h2 id="letter-title" className="sr-only">Letter from Sai Sumanth</h2>
                         <button
                             onClick={() => setIsOpen(false)}
                             className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
@@ -122,6 +126,7 @@ const Letter = ({ content }: LetterProps) => {
                         <div className="mt-12 flex items-center justify-center border-t border-white/10 pt-8">
                             <button
                                 onClick={handleLike}
+                                aria-label={hasLiked ? "Unlike this letter" : "Like this letter"}
                                 className={`flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 ${hasLiked
                                     ? 'bg-pink-500/20 text-pink-400'
                                     : 'bg-white/5 hover:bg-pink-500/20 text-gray-300 hover:text-pink-400'
