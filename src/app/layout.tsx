@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col relative`}>
         <Providers>
           {/* Background Blobs */}
