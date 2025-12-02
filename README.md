@@ -15,14 +15,6 @@ npm install
 npm run dev
 ```
 
-## Resume
-
-Sai Sumanth 
-**Thumbnail Designer**
-
-**Skills**: Canva, Photoshop
-
-
 
 **Output Screenshots**
 
