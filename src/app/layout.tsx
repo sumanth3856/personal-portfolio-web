@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'My Portfolio',
     description: 'Showcasing my work and skills',
-    url: 'https://your-portfolio.com',
+    url: 'https://saisumanth-portfolio.vercel.app',
     siteName: 'My Portfolio',
     images: [
       {
-        url: 'https://your-portfolio.com/og-image.jpg', // Placeholder
+        url: 'https://saisumanth-portfolio.vercel.app/og-image.jpg', // Placeholder
         width: 1200,
         height: 630,
       },
@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen flex flex-col relative`}>
+      <body className={`${inter.className} min-h-screen flex flex-col relative`} suppressHydrationWarning>
         <Script
           id="storage-polyfill"
           strategy="beforeInteractive"

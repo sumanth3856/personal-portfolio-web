@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { toast } from "sonner";
 
 export default function GlobalErrorHandler({ children }: { children: React.ReactNode }) {
     useEffect(() => {
