@@ -35,11 +35,12 @@ export async function POST(request: Request) {
     };
 
     // 1. Send Email via Resend (if API Key is present)
+    let emailSent = false;
     if (process.env.RESEND_API_KEY && resend) {
         try {
             console.log("Attempting to send email to:", 'saisumanth3856@gmail.com');
             const emailResponse = await resend.emails.send({
-                from: 'Sai Sumanth Portfolio <onboarding@resend.dev>',
+                from: 'Sumanth Portfolio <onboarding@resend.dev>',
                 to: 'saisumanth3856@gmail.com',
                 subject: `New Message from ${messageData.name}`,
                 html: generateEmailHtml({
@@ -50,15 +51,13 @@ export async function POST(request: Request) {
             });
 
             if (emailResponse.error) {
-                console.error("Resend API returned error:", emailResponse.error);
-                return NextResponse.json({ success: false, error: emailResponse.error.message || 'Failed to send email' }, { status: 500 });
+                console.warn("Resend API returned error (message still saved):", emailResponse.error);
             } else {
                 console.log("Resend Success - Email ID:", emailResponse.data?.id);
+                emailSent = true;
             }
         } catch (error) {
-            console.error('Resend Exception:', error);
-            const errorMessage = error instanceof Error ? error.message : 'Resend Exception';
-            return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
+            console.warn('Resend Exception (message still saved):', error);
         }
     }
 
@@ -66,7 +65,7 @@ export async function POST(request: Request) {
     if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
         try {
             await kv.lpush('messages', messageData);
-            return NextResponse.json({ success: true });
+            return NextResponse.json({ success: true, emailSent });
         } catch (error) {
             console.error('Vercel KV Error:', error);
         }
@@ -82,5 +81,5 @@ export async function POST(request: Request) {
         // Do not fail the request if local save fails, as email/KV might have succeeded
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, emailSent });
 }

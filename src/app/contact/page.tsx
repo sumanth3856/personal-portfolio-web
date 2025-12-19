@@ -33,11 +33,26 @@ export default function Contact() {
                 throw new Error(errorData.error || 'Failed to send message');
             }
 
+            const data = await response.json();
             setStatus('success');
             setFormData({ name: '', email: '', message: '' });
-            toast.success('Message sent successfully!', {
-                description: "I'll get back to you as soon as possible.",
-            });
+            
+            // Show different messages based on email delivery status
+            if (data.emailSent) {
+                toast.success('Message sent successfully!', {
+                    description: "I'll get back to you within 24 hours.",
+                });
+            } else {
+                toast.warning('Email failed to send!', {
+                    description: "But your message was saved!. I'll still see it!",
+                });
+                // Also show a warning for visibility
+                setTimeout(() => {
+                    toast.warning('Sorry for the inconvenience!', {
+                        description: 'Your message was unable to reach me.',
+                    });
+                }, 1000);
+            }
         } catch (error) {
             console.error('Error submitting form:', error);
             setStatus('error');
