@@ -13,9 +13,10 @@ interface ProjectProps {
     behance?: string;
     dribbble?: string;
     link?: string;
+    isPriority?: boolean;
 }
 
-const ProjectCard = ({ title, description, image, category, behance, link }: ProjectProps) => {
+const ProjectCard = ({ title, description, image, category, behance, link, isPriority }: ProjectProps) => {
     return (
         <motion.div
             whileHover={{ y: -10 }}
@@ -26,6 +27,10 @@ const ProjectCard = ({ title, description, image, category, behance, link }: Pro
                     src={image}
                     alt={title}
                     fill
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={isPriority}
+                    loading={isPriority ? "eager" : "lazy"}
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

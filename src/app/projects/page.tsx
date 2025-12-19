@@ -11,9 +11,9 @@ export default function Projects() {
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {projectsData.map((project) => (
+                {projectsData.map((project, index) => (
                     <div key={project.id} className="h-full">
-                        <ProjectCard {...project} />
+                        <ProjectCard {...project} isPriority={index === 0} />
                     </div>
                 ))}
             </div>
